@@ -1,4 +1,4 @@
-name: CI - Node.js Build and Test
+name: Deploy Node.js no Render
 
 on:
   push:
@@ -6,24 +6,23 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Instalar dependências
+        run: npm install express cors
 
-      - name: Instalar iniciar
-        run: npm init -y
-      - name: Instalar dependências1
-        run: npm install express
-      - name: Instalar dependências2
-        run: npm install cors
-        
-      - name: Executar
-        run: node crud.js
+      # - name: Testar servidor (opcional)
+      #   run: node crud.js & sleep 5 && curl -I http://localhost:3000/alunos
+
+      - name: Deploy no Render
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: srv-d3pgapili9vc73bi45q0
+          #service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          api-key: rnd_JGPczSTPowEvQEYyWCBSTX8oILz7
+          #api-key: ${{ secrets.RENDER_API_KEY }}

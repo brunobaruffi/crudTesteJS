@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
 
       - name: Instalar iniciar
-        run: init -y
+        run: npm init -y
       - name: Instalar dependências1
         run: npm install express
       - name: Instalar dependências2

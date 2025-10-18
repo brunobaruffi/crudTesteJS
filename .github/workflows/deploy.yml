@@ -18,8 +18,16 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Instalar dependências
-        run: npm install
+      - name: Instalar iniciar
+        run: init -y
+      - name: Instalar dependências1
+        run: npm install express
+      - name: Instalar dependências2
+        run: npm install cors
 
       - name: Executar testes
         run: npm test
+
+        
+      - name: Executar
+        run: node crud.js

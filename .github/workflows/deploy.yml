@@ -22,7 +22,7 @@ jobs:
       - name: Deploy no Render
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service-id: srv-d3pgapili9vc73bi45q0
-          #service-id: ${{ secrets.RENDER_SERVICE_ID }}
-          api-key: rnd_JGPczSTPowEvQEYyWCBSTX8oILz7
-          #api-key: ${{ secrets.RENDER_API_KEY }}
+          #service-id: srv-d3pgapili9vc73bi45q00
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          #api-key: rnd_JGPczSTPowEvQEYyWCBSTX8oILz70
+          api-key: ${{ secrets.RENDER_API_KEY }}
